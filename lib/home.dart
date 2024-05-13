@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromARGB(255, 245, 239, 80),
         body: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                   'Cats and Dogs Detector App',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontWeight: FontWeight.bold,
                       height: 1.4,
                       fontFamily: 'SofiaSans',
@@ -65,43 +65,14 @@ class _HomePageState extends State<HomePage> {
                           width: 350,
                           child: Column(
                             children: <Widget>[
-                              Image.asset('assets/cat_dog_icon.png'),
+                              Image.asset('assets/—Pngtree—vector magnifying glasses_6185183.png'),
                               const SizedBox(height: 50),
                             ],
                           ),
                         )
                      
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () {
-                            pickImageFromCamera();
-                          },
-                          child: Container(
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 18),
-                            decoration: BoxDecoration(
-                              color: Colors.black38,
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: const Text(
-                              'Capture a Photo',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'SofiaSans'),
-                            ),
-                          ),
-                        ),
-                      ),
+                
                       const SizedBox(width: 20),
                       Expanded(
                         child: GestureDetector(
@@ -131,8 +102,8 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-              ],
-            )));
+              
+            );
   }
 
   Future<void> loadModel() async {
@@ -143,12 +114,6 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Future<void> pickImageFromCamera() async {
-    final pickedFile = await picker.pickImage(source: ImageSource.camera);
-    if (pickedFile != null) {
-      _setImage(File(pickedFile.path));
-    }
-  }
 
   Future<void> pickImageFromGallery() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);

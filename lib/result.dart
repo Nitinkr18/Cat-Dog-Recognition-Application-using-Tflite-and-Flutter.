@@ -43,7 +43,7 @@ class ResultPage extends StatelessWidget {
                 height: 300.0,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.blueGrey,
+                    color: Color.fromARGB(255, 255, 1, 1),
                     width: 2.0, 
                   ),
                   borderRadius:
@@ -86,7 +86,7 @@ class ResultPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 18),
                 decoration: BoxDecoration(
-                  color: Colors.blueGrey,
+                  color: Color.fromARGB(255, 255, 1, 1),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: const Text(
